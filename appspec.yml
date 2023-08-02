@@ -2,7 +2,8 @@ version: 0.0
 os: ubuntu
 
 resources:
-  - myEC2Instance # Replace 'myEC2Instance' with the name of your EC2 instance in AWS CodeDeploy.
+  - new_instance_1
+  - new_instance_2
 
 hooks:
   BeforeInstall:
