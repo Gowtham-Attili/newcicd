@@ -1,0 +1,18 @@
+version: 0.0
+os: ubuntu
+
+resources:
+  - myEC2Instance # Replace 'myEC2Instance' with the name of your EC2 instance in AWS CodeDeploy.
+
+hooks:
+  BeforeInstall:
+    - location: scripts/stop_server.sh
+      timeout: 300
+
+  AfterInstall:
+    - location: scripts/start_server.sh
+      timeout: 300
+
+  ApplicationStart:
+    - location: scripts/restart_server.sh
+      timeout: 300
